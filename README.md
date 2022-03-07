@@ -1,7 +1,7 @@
 # turtlebot_move
 git clone the repo at your catkin_ws/src
 
-Then '''catkin_make''' the package
+Then '''catkin_make'''
 
 After that ''' source devel/setup.bash'''
 
