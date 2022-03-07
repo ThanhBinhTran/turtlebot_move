@@ -20,17 +20,18 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "robot_move"); 
   ros::NodeHandle nh;
   
+  // init robot move
   robot_move turtlebot_move(nh, "cmd_vel");
 
   ROS_INFO_STREAM("Press ctrl + c to stop");
 
-  while(nh.ok()) { //have we ctrl + C?  If no... keep going!
+  while(nh.ok()) { // press ctrl + c to break this loop.
 
     turtlebot_move.go_straight(-1.0);  // go straigth 1 meter backward
     turtlebot_move.rotate(PI/2); // rotate 90 degree
   }
 
-
+  // stop move
   turtlebot_move.stop_move();
 
   ROS_INFO("Finished\n");
