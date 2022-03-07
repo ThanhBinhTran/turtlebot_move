@@ -1,10 +1,10 @@
-This package makes a move for turtlebot by publishing "cmd_vel" geometry message.
+This package makes a move for turtlebot by publishing geometry message to "cmd_vel" topic.
 
 # turtlebot_move
 git clone the repo at your catkin_ws/src
 
-Then build package by '''catkin_make'''
+Then build package by ```catkin_make```
 
-After that run ''' source devel/setup.bash''' to make the package visible to ROS 
+After that run ``` source devel/setup.bash``` to make the package visible to ROS 
 
-To run the package: '''rosrun turtlebot_move turtlebot_move '''
+To run the package: ```rosrun turtlebot_move turtlebot_move ```
