@@ -1,3 +1,5 @@
+This package makes a move for turtlebot by publishing "cmd_vel" geometry message.
+
 # turtlebot_move
 git clone the repo at your catkin_ws/src
 
