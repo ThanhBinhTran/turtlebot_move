@@ -23,10 +23,12 @@ namespace robot_base_driver
         void set_linear(float numx, float numy, float numz); // set linear for cmd_vel geometry message
         void set_angular(float numx, float numy, float numz); // set angular for cmd_vel geometry message
 
-        void go_straight(float distance_in_m);  // make robot go straight (in meter); input: (+) forward, (-) backward
+        void go_straight(float distance_in_m);  // robot goes straight (in meter); input: (+) forward, (-) backward
                                                 
         void stop_move(); // stop moving
-        void rotate(float radian);  // make robot rotate; input: (+) anticlockwise, (-) clockwise. 
+        void rotate(float radian);  // robot rotates; input: (+) anticlockwise, (-) clockwise. 
+        void circle(float radius);  // robot follows circle defined by radius 
+        void arc(float radius, float radian) // robot follows arc
     };
 
 }    
