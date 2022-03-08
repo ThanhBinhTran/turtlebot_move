@@ -41,7 +41,7 @@ namespace robot_base_driver
         /* 
          * movement functions 
          */
-        
+
         void stop_move(); // stop moving
         
         /* go straight (meter) in time_period second; distance_in_m = (+) forward, (-) backward */

@@ -35,7 +35,6 @@ void robot_move::reset_cmd_msg()
     
 }
 
-
 void robot_move::set_linear(float numx, float numy, float numz)
 {
     cmd_msg.linear.x = numx;
