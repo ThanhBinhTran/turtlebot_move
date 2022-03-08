@@ -32,7 +32,6 @@ void robot_move::reset_cmd_msg()
 {
     set_linear(0,0,0);
     set_angular(0,0,0);
-    
 }
 
 void robot_move::set_linear(float numx, float numy, float numz)
@@ -90,7 +89,6 @@ void robot_move::rotate(float radian, float time_period) // rotate radian in tim
 
     // do publishing
     do_publish(RUN_TIMES, topic_rate);
-
 }
 
 void robot_move::arc(float theta, float radius, float time_period) // robot follows arc defined by theta and radian in time_period second
@@ -101,7 +99,7 @@ void robot_move::arc(float theta, float radius, float time_period) // robot foll
        The circular velocity =  angular velocity  * radius */
 
     float topic_rate = RUN_TIMES/time_period;
-    float angular_z = theta/topic_rate;
+    float angular_z = theta/time_period;
     float vel_x = angular_z * radius;
 
     // set cmd_vel message
