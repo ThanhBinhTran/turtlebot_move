@@ -19,16 +19,21 @@ namespace robot_base_driver
         robot_move(ros::NodeHandle nh, std::string topic_name);
         ~robot_move();
 
+        /* ROS and real robot functionality handler */
+        void do_publish(uint run_times, float topic_rate); // publish message to topic
+        bool check_velocity_limitation(float linear_vel_x, float linear_vel_y, float linear_vel_z,
+                float angular_vel_x, float angular_vel_y, float angular_vel_z); // return true if velocity is in limited vel ranges
+
+        /* message preparation */
         void reset_cmd_msg();   // reset cmd_vel geometry message
         void set_linear(float numx, float numy, float numz); // set linear for cmd_vel geometry message
         void set_angular(float numx, float numy, float numz); // set angular for cmd_vel geometry message
 
-        void go_straight(float distance_in_m);  // robot goes straight (in meter); input: (+) forward, (-) backward
-                                                
+        /* movement functions */
         void stop_move(); // stop moving
-        void rotate(float radian);  // robot rotates; input: (+) anticlockwise, (-) clockwise. 
-        void circle(float radius);  // robot follows circle defined by radius 
-        void arc(float radius, float radian) // robot follows arc
+        void go_straight(float distance_in_m, float time_period);  // go straight (meter) in time_period second; distance_in_m = (+) forward, (-) backward
+        void rotate(float radian, float time_period);  // rotate (radian) in time_period second; radian = (+) anticlockwise, (-) clockwise. 
+        void arc(float theta, float radius, float time_period); // robot follows arc defined by theta and radian in time_period second.
     };
 
 }    
